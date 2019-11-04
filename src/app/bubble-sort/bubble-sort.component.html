@@ -1,0 +1,3 @@
+<div [ngClass]="{'container': true}">
+    <div [ngClass]="{'line': true, 'changing': (changingLineIndex === i)}" *ngFor="let line of lines, let i = index" [ngStyle]=" {'height': getHeight(i)}"></div>
+</div>
