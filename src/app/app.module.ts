@@ -4,8 +4,8 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BubbleSortComponent } from "./bubble-sort/bubble-sort.component";
-import { CodeAreaComponent } from './code-area/code-area.component';
-import { IndexComponent } from './index/index.component';
+import { CodeAreaComponent } from "./code-area/code-area.component";
+import { IndexComponent } from "./index/index.component";
 
 @NgModule({
   declarations: [

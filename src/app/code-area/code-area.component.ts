@@ -11,7 +11,7 @@ import * as theme from "ace-builds/src-noconflict/theme-tomorrow_night";
   encapsulation: ViewEncapsulation.None
 })
 export class CodeAreaComponent implements AfterContentInit, OnDestroy {
-  private editor:ace.Ace.Editor;
+  private editor: ace.Ace.Editor;
   constructor() {
 
   }
