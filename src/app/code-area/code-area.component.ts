@@ -4,6 +4,7 @@ import "ace-builds/webpack-resolver";
 import * as JSMode from "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/ext-language_tools";
 import * as theme from "ace-builds/src-noconflict/theme-tomorrow_night";
+import {StoreService} from "../store.service";
 @Component({
   selector: "app-code-area",
   templateUrl: "./code-area.component.html",
@@ -34,6 +35,11 @@ export class CodeAreaComponent implements AfterContentInit, OnDestroy {
     });
     this.editor.session.setMode(new JS());
 
+  }
+
+  protected runCodeOnClickHandler() {
+    StoreService.setAlgorithm(this.editor.getValue());
+    StoreService.showCodeArea.next(false);
   }
 
 }

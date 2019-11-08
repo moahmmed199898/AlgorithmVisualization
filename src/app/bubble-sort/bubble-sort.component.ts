@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation, ChangeDetectorRef } from "@angular/core";
 import { SlowdownService } from "../slowdown.service";
 /**
  * Visualization of the bubble sort algorithm
@@ -16,14 +16,15 @@ export class BubbleSortComponent implements OnInit {
   slowdown: SlowdownService = new SlowdownService();
   changingLineIndex = 0;
 
-  constructor() {
+  constructor(private cd: ChangeDetectorRef) {
 
   }
 
   ngOnInit() {
+    this.exposeSomeThings();
     this.generateRandomArray();
-    this.slowdown.setSpeed(1);
-    setTimeout(() => this.bubbleSort(), 3000);
+    this.slowdown.setSpeed(100);
+    // setTimeout(() => this.bubbleSort(), 3000);
   }
 
 
@@ -31,6 +32,9 @@ export class BubbleSortComponent implements OnInit {
     return `${this.lines[index].toFixed(0)}px`;
   }
 
+  public update() {
+    this.cd.detectChanges();
+  }
   public async bubbleSort() {
 
     for (let i = 0; i < this.lines.length - 1; i++) {
@@ -61,5 +65,19 @@ export class BubbleSortComponent implements OnInit {
     }
   }
 
+  private setArray(index: number, value: number) {
+    
+  }
+  private exposeSomeThings() {
+    window.VA = this;
+  }
 
+
+}
+
+
+declare global {
+  interface Window {
+    VA: any;
+  }
 }
