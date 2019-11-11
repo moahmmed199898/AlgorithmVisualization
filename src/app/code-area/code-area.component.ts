@@ -37,7 +37,7 @@ export class CodeAreaComponent implements AfterContentInit, OnDestroy {
 
   }
 
-  protected runCodeOnClickHandler() {
+  runCodeOnClickHandler() {
     StoreService.setAlgorithm(this.editor.getValue());
     StoreService.showCodeArea.next(false);
   }

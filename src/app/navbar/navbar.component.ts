@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
     StoreService.showCodeArea.subscribe((value)=>this.showCodeArea = value);
   }
 
-  protected ToggleShowCodeArea() {
+  ToggleShowCodeArea() {
     StoreService.showCodeArea.next(this.showCodeArea? false:true);
   }
 
