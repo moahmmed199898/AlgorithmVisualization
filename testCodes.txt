@@ -1,5 +1,6 @@
+//bubble sort
 async function test() {
-    
+
     for (let i = 0; i < VA.lines.length - 1; i++) {
       for (let j = 0; j < VA.lines.length - i - 1; j++) {
         VA.changingLineIndex = j;
@@ -7,6 +8,7 @@ async function test() {
           VA.swap(j);
         }
         await VA.slowdown.wait();
+        VA.update()
       }
     }
 }
@@ -14,7 +16,7 @@ test();
 
 
 
-
+//quick sort
 
 let items = VA.lines;
 async function swap(items, leftIndex, rightIndex){
@@ -23,7 +25,7 @@ async function swap(items, leftIndex, rightIndex){
     items[rightIndex] = temp;
     await VA.slowdown.wait();
     VA.update();
-    
+
 }
 async function partition(items, left, right) {
     var pivot   = items[Math.floor((right + left) / 2)], //middle element
