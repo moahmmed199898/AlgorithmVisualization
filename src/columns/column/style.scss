@@ -1,0 +1,8 @@
+@import "./../../base";
+.column {
+    background-color: $foregroundColor;
+    flex: 1;
+    margin: 0 0.5px;
+    vertical-align: top;
+}
+
